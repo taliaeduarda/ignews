@@ -1,6 +1,6 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import { getPrismicClient } from "../../services/prismic";
+import { getPrismicClient } from "../api/prismic/prismic";
 import Prismic from "@prismicio/client";
 import { RichText } from "prismic-dom";
 import Link from "next/link";
