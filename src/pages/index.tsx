@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import Image from 'next/image'
 
 import { SubscribeButton } from '../components/SubscribeButton'
 import { stripe } from '../services/stripe'
@@ -22,7 +23,7 @@ export default function Home({ product }: HomeProps) {
 
     <main className={styles.contentContainer}>
       <section className={styles.hero} > 
-        <span>👏 Hey, welcome</span>
+        <span>Hey, welcome</span>
         <h1>News about the <span>react</span> world. </h1>
         <p>
           Get access to all the publications <br />
@@ -30,7 +31,13 @@ export default function Home({ product }: HomeProps) {
         </p>
         <SubscribeButton priceId={product.priceId} />
       </section>
-      <img src="/images/avatar.svg" alt="girl coding" />
+          <Image
+        alt="Next.js logo"
+        src="/images/avatar.svg"
+        width={970}
+        height={970}
+      />
+    
     </main>
     </>
   )

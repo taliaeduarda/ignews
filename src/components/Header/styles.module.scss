@@ -1,13 +1,12 @@
 .headerContainer {
     height: 5rem;
-    border-bottom: 1px solid var(--gray-800);
+    box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
 }
 
 .headerContent {
     max-width: 1120px;
     height: 5rem;
     margin: 0 auto;
-    padding: 0 2rem;
 
     display: flex;
     align-items: center;
@@ -21,17 +20,17 @@
             position: relative;
             padding: 0 0.5rem;
             height: 5rem;
+            letter-spacing: 1px;
             line-height: 5rem;
-            color: var(--gray-300);
+            color: var(--gray-900);
 
             transition: color 0.2s;
 
             &:hover {
-                color: var(--white)
+                font-weight: 600;
             }
 
             &.active {
-                color: var(--white);
                 font-weight: bold;
             }
 
