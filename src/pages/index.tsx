@@ -14,7 +14,7 @@ interface HomeProps {
   }
 }
 
-export default function Home({ product }: HomeProps) {
+export default function Home() {
   return (
     <>
     <Head>
@@ -27,9 +27,9 @@ export default function Home({ product }: HomeProps) {
         <h1>News about the <span>react</span> world. </h1>
         <p>
           Get access to all the publications <br />
-          <span>for {product.amount} month</span>
+          <span>for 9.99 month</span>
         </p>
-        <SubscribeButton priceId={product.priceId} />
+        <SubscribeButton />
       </section>
           <Image
         alt="Next.js logo"
@@ -44,21 +44,21 @@ export default function Home({ product }: HomeProps) {
 }
 
 
-export const getStaticProps: GetStaticProps = async () => {
-  const price = await stripe.prices.retrieve('price_1JNI9yCBcOFx2qJ82rLhmP8L')
+// export const getStaticProps: GetStaticProps = async () => {
+//   const price = await stripe.prices.retrieve('price_1JNI9yCBcOFx2qJ82rLhmP8L')
   
-  const product = {
-    priceId: price.id,
-    amount: new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-    }).format( price.unit_amount / 100),
-  }
+//   const product = {
+//     priceId: price.id,
+//     amount: new Intl.NumberFormat('en-US', {
+//       style: 'currency',
+//       currency: 'USD',
+//     }).format( price.unit_amount / 100),
+//   }
 
-  return {
-    props: {
-      product,
-    },
-    revalidate: 60 * 60 * 24,
-  }
-}
+//   return {
+//     props: {
+//       product,
+//     },
+//     revalidate: 60 * 60 * 24,
+//   }
+// }
